@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S M Tadabbur Islam — eCommerce, Web Dev & Marketing Specialist</title>
+<meta name="description" content="Senior eCommerce, Web Developer & Performance Marketing Specialist. Shopify Expert. AI Automation. Based in Guangzhou, open to Dubai & global roles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#08152a;--navy2:#0d1e38;--teal:#00c9b1;--teal2:#00a896;
+  --gold:#f5a623;--white:#eef3f8;--gray:#7a8fa8;--card:#0f1e33;
+  --card2:#0b1827;--border:rgba(0,201,177,0.13);--font:'DM Sans',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--navy);color:var(--white);font-family:var(--font);overflow-x:hidden;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-thumb{background:var(--teal);border-radius:2px;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;background:rgba(8,21,42,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:var(--teal);letter-spacing:2px;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{color:var(--gray);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.3px;transition:color .3s;}
+.nav-links a:hover,.nav-links a.active{color:var(--teal);}
+.nav-right{display:flex;gap:12px;align-items:center;}
+.btn-cv{background:transparent;border:1px solid var(--teal);color:var(--teal);padding:7px 18px;border-radius:4px;font-size:.78rem;font-weight:700;text-decoration:none;letter-spacing:.5px;transition:all .3s;}
+.btn-cv:hover{background:var(--teal);color:var(--navy);}
+.avail{display:flex;align-items:center;gap:6px;font-size:.72rem;color:var(--gray);}
+.avail-dot{width:7px;height:7px;background:#22ee88;border-radius:50%;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.ham span{width:22px;height:2px;background:var(--white);transition:all .3s;display:block;}
+
+/* MOBILE MENU */
+.mob-nav{display:none;position:fixed;inset:0;background:var(--navy2);z-index:199;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
+.mob-nav.on{display:flex;}
+.mob-nav a{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:700;color:var(--white);text-decoration:none;}
+.mob-nav a:hover{color:var(--teal);}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;padding:110px 5% 70px;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 65% 45%,rgba(0,201,177,.07) 0%,transparent 65%),
+  radial-gradient(ellipse 50% 40% at 15% 75%,rgba(245,166,35,.04) 0%,transparent 60%);}
+.hero-grid{position:absolute;inset:0;
+  background-image:linear-gradient(rgba(0,201,177,.025) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(0,201,177,.025) 1px,transparent 1px);
+  background-size:55px 55px;}
+.hero-content{position:relative;z-index:2;max-width:680px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,201,177,.09);border:1px solid var(--border);padding:6px 16px;border-radius:20px;font-size:.72rem;letter-spacing:1.5px;color:var(--teal);margin-bottom:26px;text-transform:uppercase;}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--teal);border-radius:50%;animation:blink 2s infinite;}
+h1{font-family:'Syne',sans-serif;font-size:clamp(2.6rem,5.5vw,4.6rem);font-weight:800;line-height:1.05;margin-bottom:14px;}
+h1 em{color:var(--teal);font-style:normal;}
+.hero-sub{font-size:clamp(.9rem,1.6vw,1.15rem);color:var(--gray);font-weight:300;margin-bottom:30px;line-height:1.7;}
+.hero-sub strong{color:var(--white);font-weight:500;}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
+.htag{background:rgba(0,201,177,.08);border:1px solid rgba(0,201,177,.2);padding:4px 14px;border-radius:20px;font-size:.75rem;color:var(--teal);font-weight:600;}
+.hero-stats{display:flex;gap:36px;margin-bottom:38px;flex-wrap:wrap;}
+.stat{display:flex;flex-direction:column;}
+.stat-n{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;color:var(--teal);}
+.stat-l{font-size:.7rem;color:var(--gray);letter-spacing:.3px;margin-top:2px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-p{background:var(--teal);color:var(--navy);padding:13px 30px;border-radius:4px;font-weight:700;font-size:.88rem;text-decoration:none;letter-spacing:.5px;transition:all .3s;display:inline-flex;align-items:center;gap:8px;}
+.btn-p:hover{background:var(--gold);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,201,177,.28);}
+.btn-o{border:1px solid var(--border);color:var(--white);padding:13px 30px;border-radius:4px;font-size:.88rem;text-decoration:none;transition:all .3s;display:inline-flex;align-items:center;gap:8px;}
+.btn-o:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px);}
+
+/* HERO PHOTO */
+.hero-photo{position:absolute;right:5%;top:50%;transform:translateY(-50%);z-index:2;}
+.photo-frame{position:relative;width:260px;height:340px;}
+.photo-frame::before{content:'';position:absolute;inset:-2px;background:linear-gradient(135deg,var(--teal),transparent 50%,var(--gold));border-radius:12px;}
+.photo-inner{position:relative;z-index:1;width:100%;height:100%;background:var(--card);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--gray);font-size:.75rem;overflow:hidden;}
+.photo-inner img{width:100%;height:100%;object-fit:cover;border-radius:10px;}
+.fc{position:absolute;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 14px;}
+.fc1{bottom:-16px;right:-16px;z-index:3;}
+.fc2{top:-16px;left:-24px;z-index:3;}
+.fc-n{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--teal);}
+.fc-l{font-size:.62rem;color:var(--gray);}
+
+/* SECTIONS */
+section{padding:86px 5%;}
+.stag{font-size:.7rem;letter-spacing:3px;color:var(--teal);font-weight:700;margin-bottom:10px;text-transform:uppercase;}
+h2{font-family:'Syne',sans-serif;font-size:clamp(1.7rem,3vw,2.6rem);font-weight:800;margin-bottom:14px;line-height:1.2;}
+.ssub{color:var(--gray);font-size:.92rem;max-width:540px;line-height:1.7;}
+.sh{margin-bottom:50px;}
+
+/* ABOUT */
+#about{background:var(--card2);}
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:start;}
+.about-text p{color:var(--gray);line-height:1.8;font-size:.88rem;margin-bottom:16px;}
+.about-text p strong{color:var(--white);}
+.info-list{display:flex;flex-direction:column;gap:10px;margin-top:20px;}
+.info-item{display:flex;gap:10px;align-items:center;font-size:.84rem;color:var(--gray);}
+.info-item span:first-child{color:var(--teal);font-size:1rem;}
+.metrics-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.metric-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px;text-align:center;transition:all .3s;}
+.metric-card:hover{border-color:var(--teal);transform:translateY(-2px);}
+.metric-n{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;}
+.metric-l{font-size:.7rem;color:var(--gray);margin-top:4px;}
+
+/* SKILLS */
+.skills-cats{display:flex;flex-direction:column;gap:24px;}
+.skill-cat{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.skill-cat-header{background:linear-gradient(90deg,rgba(0,201,177,.1),transparent);padding:14px 20px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);}
+.skill-cat-icon{font-size:1.3rem;}
+.skill-cat-title{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;}
+.skill-cat-body{padding:16px 20px;display:flex;flex-wrap:wrap;gap:8px;}
+.skill-pill{background:rgba(0,201,177,.07);border:1px solid rgba(0,201,177,.18);padding:5px 14px;border-radius:16px;font-size:.78rem;color:var(--white);transition:all .3s;}
+.skill-pill:hover{background:rgba(0,201,177,.18);border-color:var(--teal);color:var(--teal);}
+.skill-pill.hot{background:rgba(245,166,35,.1);border-color:rgba(245,166,35,.3);color:var(--gold);}
+
+/* EXPERIENCE TIMELINE */
+#experience{background:var(--card2);}
+.timeline{position:relative;padding-left:28px;}
+.timeline::before{content:'';position:absolute;left:0;top:10px;bottom:10px;width:1px;background:linear-gradient(to bottom,var(--teal),rgba(0,201,177,.1));}
+.tj{position:relative;margin-bottom:50px;}
+.tj::before{content:'';position:absolute;left:-33px;top:8px;width:11px;height:11px;background:var(--teal);border-radius:50%;box-shadow:0 0 0 3px rgba(0,201,177,.2),0 0 12px rgba(0,201,177,.3);}
+.tj-date{font-size:.72rem;color:var(--teal);letter-spacing:1px;margin-bottom:4px;font-weight:700;}
+.tj-role{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:2px;}
+.tj-co{color:var(--gray);font-size:.83rem;margin-bottom:14px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.tj-co span{color:var(--teal);}
+.tj-pts{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:14px;}
+.tj-pts li{font-size:.83rem;color:var(--gray);padding-left:14px;position:relative;line-height:1.6;}
+.tj-pts li::before{content:'▸';position:absolute;left:0;color:var(--teal);}
+.chips{display:flex;flex-wrap:wrap;gap:7px;}
+.chip{background:rgba(0,201,177,.09);border:1px solid rgba(0,201,177,.2);padding:3px 11px;border-radius:10px;font-size:.68rem;color:var(--teal);font-weight:700;}
+.chip.gold{background:rgba(245,166,35,.09);border-color:rgba(245,166,35,.25);color:var(--gold);}
+
+/* PORTFOLIO */
+#portfolio{background:var(--navy);}
+.pf-filter{display:flex;gap:10px;margin-bottom:36px;flex-wrap:wrap;}
+.fb{background:transparent;border:1px solid var(--border);color:var(--gray);padding:7px 18px;border-radius:18px;font-size:.78rem;cursor:pointer;transition:all .3s;font-family:var(--font);}
+.fb.on,.fb:hover{background:var(--teal);border-color:var(--teal);color:var(--navy);font-weight:700;}
+.pf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px;}
+.pf-card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:all .3s;cursor:pointer;}
+.pf-card:hover{transform:translateY(-4px);border-color:var(--teal);box-shadow:0 14px 40px rgba(0,0,0,.35);}
+.pf-img{width:100%;height:190px;position:relative;overflow:hidden;}
+.pf-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.pf-card:hover .pf-img img{transform:scale(1.05);}
+.pf-ph{width:100%;height:190px;background:linear-gradient(135deg,var(--navy2),var(--card));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--gray);font-size:.75rem;}
+.pf-ov{position:absolute;inset:0;background:rgba(0,201,177,.88);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;}
+.pf-card:hover .pf-ov{opacity:1;}
+.pf-ov-txt{color:var(--navy);font-weight:800;font-size:.82rem;letter-spacing:1.5px;}
+.pf-info{padding:15px;}
+.pf-cat{font-size:.62rem;color:var(--teal);letter-spacing:2px;font-weight:700;margin-bottom:5px;}
+.pf-title{font-family:'Syne',sans-serif;font-weight:700;font-size:.92rem;margin-bottom:5px;}
+.pf-desc{font-size:.76rem;color:var(--gray);line-height:1.5;}
+.pf-badges{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;}
+.pbadge{font-size:.62rem;background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.22);color:var(--gold);padding:2px 8px;border-radius:7px;font-weight:700;}
+
+/* VIDEOS */
+#videos{background:var(--card2);}
+.vg{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;}
+.vc{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:all .3s;}
+.vc:hover{border-color:var(--teal);transform:translateY(-3px);}
+.vthumb{width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:var(--navy2);}
+.vthumb iframe{width:100%;height:100%;border:none;}
+.vph{width:100%;height:100%;background:linear-gradient(135deg,#0a1e3a,#102a50);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;cursor:pointer;transition:background .3s;}
+.vph:hover{background:linear-gradient(135deg,#102a50,#0a1e3a);}
+.play{width:54px;height:54px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .3s;}
+.vph:hover .play{transform:scale(1.12);}
+.play-tri{width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:18px solid var(--navy);margin-left:4px;}
+.vlbl{font-size:.7rem;color:var(--gray);letter-spacing:1px;}
+.vinfo{padding:15px;}
+.vcat{font-size:.62rem;color:var(--teal);letter-spacing:2px;font-weight:700;margin-bottom:5px;}
+.vtitle{font-family:'Syne',sans-serif;font-weight:700;font-size:.92rem;margin-bottom:5px;}
+.vdesc{font-size:.76rem;color:var(--gray);line-height:1.5;}
+.vhint{font-size:.67rem;color:rgba(122,143,168,.45);margin-top:5px;font-style:italic;}
+
+/* SERVICES */
+#services{background:var(--navy);}
+.sv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px;}
+.sv{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:26px;transition:all .3s;position:relative;overflow:hidden;}
+.sv::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),transparent);transform:scaleX(0);transition:transform .4s;transform-origin:left;}
+.sv:hover::before{transform:scaleX(1);}
+.sv:hover{transform:translateY(-4px);border-color:rgba(0,201,177,.28);}
+.sv-icon{font-size:2rem;margin-bottom:14px;}
+.sv-title{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:7px;}
+.sv-desc{font-size:.78rem;color:var(--gray);line-height:1.6;}
+.sv-price{margin-top:14px;font-size:.72rem;color:var(--teal);font-weight:700;letter-spacing:.3px;}
+
+/* CONTACT */
+#contact{background:var(--card2);}
+.contact-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:start;}
+.ci-list{display:flex;flex-direction:column;gap:20px;}
+.ci{display:flex;align-items:center;gap:14px;}
+.ci-icon{width:42px;height:42px;background:rgba(0,201,177,.09);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.ci-lbl{font-size:.67rem;color:var(--gray);letter-spacing:1px;margin-bottom:2px;}
+.ci-val{font-size:.88rem;font-weight:500;}
+.ci-val a{color:var(--white);text-decoration:none;transition:color .3s;}
+.ci-val a:hover{color:var(--teal);}
+.av-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,201,177,.09);border:1px solid var(--border);padding:9px 18px;border-radius:6px;font-size:.78rem;margin-bottom:24px;}
+.cf{display:flex;flex-direction:column;gap:14px;}
+.fg{display:flex;flex-direction:column;gap:5px;}
+.flbl{font-size:.7rem;color:var(--gray);letter-spacing:.5px;}
+.fi,.fta{background:var(--card);border:1px solid var(--border);color:var(--white);padding:11px 15px;border-radius:6px;font-family:var(--font);font-size:.88rem;transition:border-color .3s;outline:none;}
+.fi:focus,.fta:focus{border-color:var(--teal);}
+.fta{resize:vertical;min-height:110px;}
+.fsub{background:var(--teal);color:var(--navy);padding:13px;border-radius:6px;font-weight:700;font-size:.88rem;border:none;cursor:pointer;font-family:'Syne',sans-serif;letter-spacing:1px;transition:all .3s;}
+.fsub:hover{background:var(--gold);transform:translateY(-2px);}
+
+/* FOOTER */
+footer{background:var(--navy2);border-top:1px solid var(--border);padding:36px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.fl{font-family:'Syne',sans-serif;font-weight:800;font-size:.95rem;color:var(--teal);}
+.ft{font-size:.72rem;color:var(--gray);}
+.socials{display:flex;gap:10px;}
+.sl{width:34px;height:34px;background:var(--card);border:1px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.78rem;color:var(--gray);transition:all .3s;}
+.sl:hover{border-color:var(--teal);color:var(--teal);}
+
+/* MODAL */
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:1000;align-items:center;justify-content:center;padding:20px;}
+.modal.on{display:flex;}
+.mc{background:var(--card);border:1px solid var(--border);border-radius:12px;max-width:780px;width:100%;max-height:90vh;overflow:auto;}
+.mh{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;border-bottom:1px solid var(--border);}
+.mt{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;}
+.mx{background:none;border:none;color:var(--gray);font-size:1.2rem;cursor:pointer;width:30px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:4px;transition:all .3s;}
+.mx:hover{background:rgba(255,255,255,.1);color:var(--white);}
+.mb{padding:22px;}
+.mi{width:100%;border-radius:8px;margin-bottom:14px;}
+.md{color:var(--gray);font-size:.88rem;line-height:1.7;}
+
+/* ANIMATIONS */
+.fu{opacity:0;transform:translateY(28px);transition:all .65s ease;}
+.fu.vis{opacity:1;transform:translateY(0);}
+
+/* PROGRESS BARS */
+.pb-wrap{display:flex;flex-direction:column;gap:10px;margin-top:12px;}
+.pb-item{display:flex;flex-direction:column;gap:4px;}
+.pb-label{display:flex;justify-content:space-between;font-size:.75rem;}
+.pb-label span:first-child{color:var(--white);font-weight:500;}
+.pb-label span:last-child{color:var(--teal);font-weight:700;}
+.pb-bar{height:4px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden;}
+.pb-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--teal2));border-radius:2px;width:0;transition:width 1.2s ease;}
+
+/* COUNTER */
+.count{transition:all .3s;}
+
+@media(max-width:960px){.hero-photo{display:none;}.about-grid{grid-template-columns:1fr;}.contact-wrap{grid-template-columns:1fr;}.nav-links,.nav-right{display:none;}.ham{display:flex;}}
+@media(max-width:600px){section{padding:60px 5%;}h1{font-size:2.2rem;}.hero-stats{gap:20px;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">TADABBUR</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="avail"><span class="avail-dot"></span>Available for Work</div>
+    <a href="Tadabbur_Islam_Complete_CV_EN.docx" class="btn-cv">Download CV</a>
+  </div>
+  <button class="ham" onclick="toggleMob()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mob-nav" id="mobNav">
+  <a href="#about" onclick="toggleMob()">About</a>
+  <a href="#skills" onclick="toggleMob()">Skills</a>
+  <a href="#experience" onclick="toggleMob()">Experience</a>
+  <a href="#portfolio" onclick="toggleMob()">Portfolio</a>
+  <a href="#videos" onclick="toggleMob()">Videos</a>
+  <a href="#services" onclick="toggleMob()">Services</a>
+  <a href="#contact" onclick="toggleMob()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Available · Open to Relocate · Freelance Ready</div>
+    <h1>S M Tadabbur<br><em>Islam</em></h1>
+    <p class="hero-sub">
+      <strong>eCommerce · Web Developer · Performance Marketing · AI Automation</strong><br>
+      7+ Years · Shopify Expert · Guangzhou → Dubai & Global
+    </p>
+    <div class="hero-tags">
+      <span class="htag">Shopify Liquid</span>
+      <span class="htag">Meta Ads</span>
+      <span class="htag">Google Ads</span>
+      <span class="htag">AI Chatbot</span>
+      <span class="htag">SEO · Score 92</span>
+      <span class="htag">GA4 + CAPI</span>
+      <span class="htag">Make.com</span>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-n count" data-target="150">0</span><span style="font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;color:var(--teal)">+</span><span class="stat-l">Websites Built</span></div>
+      <div class="stat"><span style="font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;color:var(--teal)">$</span><span class="stat-n count" data-target="1">0</span><span style="font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;color:var(--teal)">M</span><span class="stat-l">Annual Revenue</span></div>
+      <div class="stat"><span class="stat-n count" data-target="7">0</span><span style="font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;color:var(--teal)">+</span><span class="stat-l">Years Experience</span></div>
+      <div class="stat"><span class="stat-n count" data-target="92">0</span><span class="stat-l">SEO Score</span></div>
+    </div>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-p">✉ Hire Me</a>
+      <a href="#portfolio" class="btn-o">⊞ View Work</a>
+      <a href="https://wa.me/8615528502117" class="btn-o" target="_blank">💬 WhatsApp</a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <div class="photo-frame">
+      <div class="photo-inner">
+        <!-- Replace with: <img src="photo.jpg" alt="Tadabbur Islam"> -->
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity=".3"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span style="font-size:.72rem">Add photo.jpg here</span>
+      </div>
+      <div class="fc fc1"><div class="fc-n">96/88</div><div class="fc-l">PageSpeed</div></div>
+      <div class="fc fc2"><div class="fc-n">+40%</div><div class="fc-l">ROI Lift</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sh fu">
+    <div class="stag">About Me</div>
+    <h2>7+ Years Building<br>Real Business Results</h2>
+  </div>
+  <div class="about-grid fu">
+    <div class="about-text">
+      <p>Senior <strong>eCommerce, Web Development & Digital Marketing Specialist</strong> with 7+ years of combined experience — from IT infrastructure and QA engineering to full-stack Shopify development, performance marketing, AI automation, and international trade.</p>
+      <p>Currently in <strong>Guangzhou, China</strong> managing full eCommerce operations for a musical instrument manufacturer. Previously drove <strong>$1M annual revenue</strong> at Tourifye across Asia, Europe & the Middle East.</p>
+      <p>I don't just manage campaigns — I <strong>build the whole system</strong>: Shopify store, tracking, ads, automation, SEO, and reporting — everything from scratch.</p>
+      <div class="info-list">
+        <div class="info-item"><span>📍</span><span>Guangzhou, China · Open to Dubai, Remote & Relocation</span></div>
+        <div class="info-item"><span>🎓</span><span>MSc Software Engineering (SWUST, China) · BSc Computer Science (AUB)</span></div>
+        <div class="info-item"><span>🌐</span><span>Bengali (Native) · English (Fluent) · Chinese (Conversational) · Hindi (Proficient)</span></div>
+        <div class="info-item"><span>💼</span><span>Available: Full-time · Freelance · Part-time Remote</span></div>
+      </div>
+      <div class="pb-wrap" style="margin-top:24px;">
+        <div class="pb-item"><div class="pb-label"><span>Shopify Development</span><span>95%</span></div><div class="pb-bar"><div class="pb-fill" data-w="95"></div></div></div>
+        <div class="pb-item"><div class="pb-label"><span>Performance Marketing</span><span>92%</span></div><div class="pb-bar"><div class="pb-fill" data-w="92"></div></div></div>
+        <div class="pb-item"><div class="pb-label"><span>SEO & Analytics</span><span>90%</span></div><div class="pb-bar"><div class="pb-fill" data-w="90"></div></div></div>
+        <div class="pb-item"><div class="pb-label"><span>AI Automation</span><span>85%</span></div><div class="pb-bar"><div class="pb-fill" data-w="85"></div></div></div>
+        <div class="pb-item"><div class="pb-label"><span>Frontend Dev (HTML/CSS/JS)</span><span>82%</span></div><div class="pb-bar"><div class="pb-fill" data-w="82"></div></div></div>
+      </div>
+    </div>
+    <div class="metrics-grid">
+      <div class="metric-card"><div class="metric-n" style="color:var(--teal)">150+</div><div class="metric-l">Websites Built & Optimized</div></div>
+      <div class="metric-card"><div class="metric-n" style="color:var(--gold)">$1M</div><div class="metric-l">Annual Revenue Generated</div></div>
+      <div class="metric-card"><div class="metric-n" style="color:var(--teal)">+40%</div><div class="metric-l">Campaign ROI Improvement</div></div>
+      <div class="metric-card"><div class="metric-n" style="color:var(--gold)">+60%</div><div class="metric-l">Organic Traffic Growth</div></div>
+      <div class="metric-card"><div class="metric-n" style="color:var(--teal)">9 KWs</div><div class="metric-l">Google Page 1 Rankings</div></div>
+      <div class="metric-card"><div class="metric-n" style="color:var(--gold)">96/88</div><div class="metric-l">PageSpeed Desktop/Mobile</div></div>
+      <div class="metric-card"><div class="metric-n" style="color:var(--teal)">SEO 92</div><div class="metric-l">Semrush Audit Score</div></div>
+      <div class="metric-card"><div class="metric-n" style="color:var(--gold)">5,000</div><div class="metric-l">Organic FB Followers</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sh fu">
+    <div class="stag">Skills & Stack</div>
+    <h2>Full-Stack Digital<br>Marketing Arsenal</h2>
+    <p class="ssub">Every tool listed is actively used — not just listed for show.</p>
+  </div>
+  <div class="skills-cats fu">
+    <div class="skill-cat">
+      <div class="skill-cat-header"><span class="skill-cat-icon">🛍️</span><span class="skill-cat-title">eCommerce & Web Development</span></div>
+      <div class="skill-cat-body">
+        <span class="skill-pill hot">Shopify Expert</span><span class="skill-pill hot">Shopify Liquid</span><span class="skill-pill">Theme 2nd Development</span><span class="skill-pill">Custom Sections & Blocks</span><span class="skill-pill">Figma → Shopify</span><span class="skill-pill">WordPress / WooCommerce</span><span class="skill-pill hot">HTML5 · CSS3 · JavaScript</span><span class="skill-pill">Responsive Design</span><span class="skill-pill">Mobile Optimization</span><span class="skill-pill">PageSpeed Optimization</span><span class="skill-pill">CRO · UX/UI</span><span class="skill-pill">Landing Page Dev</span><span class="skill-pill">Amazon Seller Central</span><span class="skill-pill">eBay · AliExpress · Temu</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <div class="skill-cat-header"><span class="skill-cat-icon">📊</span><span class="skill-cat-title">Performance Marketing & Ads</span></div>
+      <div class="skill-cat-body">
+        <span class="skill-pill hot">Meta Ads (FB & IG)</span><span class="skill-pill hot">Google Ads (Search & Shopping)</span><span class="skill-pill">TikTok Ads</span><span class="skill-pill">Amazon PPC</span><span class="skill-pill">Full-Funnel Strategy</span><span class="skill-pill">Audience Research</span><span class="skill-pill">Creative Testing</span><span class="skill-pill">ROAS Optimization</span><span class="skill-pill">Retargeting</span><span class="skill-pill">A/B Testing</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <div class="skill-cat-header"><span class="skill-cat-icon">📈</span><span class="skill-cat-title">Analytics, Tracking & SEO</span></div>
+      <div class="skill-cat-body">
+        <span class="skill-pill hot">GA4</span><span class="skill-pill hot">Google Tag Manager</span><span class="skill-pill hot">Server-Side CAPI</span><span class="skill-pill">Google Merchant Center</span><span class="skill-pill">Facebook Commerce Manager</span><span class="skill-pill">Technical SEO (Score 92)</span><span class="skill-pill">On-Page SEO</span><span class="skill-pill">Keyword Research</span><span class="skill-pill">Schema Markup</span><span class="skill-pill">Semrush</span><span class="skill-pill">Google Search Console</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <div class="skill-cat-header"><span class="skill-cat-icon">🤖</span><span class="skill-cat-title">AI Automation & Tools</span></div>
+      <div class="skill-cat-body">
+        <span class="skill-pill hot">AI Chatbot Development</span><span class="skill-pill hot">Make.com Automation</span><span class="skill-pill hot">Zapier Workflows</span><span class="skill-pill">AI Agent Deployment</span><span class="skill-pill">Prompt Engineering</span><span class="skill-pill">Email Automation</span><span class="skill-pill">Social Media Automation</span><span class="skill-pill">AI Content Generation</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <div class="skill-cat-header"><span class="skill-cat-icon">💻</span><span class="skill-cat-title">IT & Technical Background</span></div>
+      <div class="skill-cat-body">
+        <span class="skill-pill">QA / Test Engineering</span><span class="skill-pill">Test Plan & Case Creation</span><span class="skill-pill">Bug Tracking</span><span class="skill-pill">NOC Operations</span><span class="skill-pill">Network Administration</span><span class="skill-pill">Routers · Switches · Firewalls</span><span class="skill-pill">DNS · Mail · Proxy Monitoring</span><span class="skill-pill">Server Maintenance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sh fu">
+    <div class="stag">Experience</div>
+    <h2>7+ Years Across<br>4 Industries</h2>
+    <p class="ssub">From IT infrastructure and QA to eCommerce, marketing, AI automation, and international trade.</p>
+  </div>
+  <div class="timeline fu">
+
+    <div class="tj">
+      <div class="tj-date">FEB 2026 – PRESENT</div>
+      <div class="tj-role">Performance Marketing, AI Automation & eCommerce Specialist</div>
+      <div class="tj-co">Jiangsu Xinghai Musical Instrument Co., Ltd.<span>·</span>Guangzhou, China</div>
+      <ul class="tj-pts">
+        <li>Built full Shopify store from scratch — Liquid dev, custom sections, landing pages — SEO 92, PageSpeed 96/88</li>
+        <li>Deployed AI-powered customer service chatbot for 24/7 automated inquiry handling and order tracking</li>
+        <li>Built AI Agent workflows (Make.com + Zapier) automating email, social publishing, listings, follow-ups</li>
+        <li>Ranked 9 keywords on Google Page 1 — 200+ daily organic visitors, zero paid spend</li>
+        <li>Grew Facebook 0 → 5,000+ followers via 100% organic content strategy</li>
+        <li>Managed 3 Amazon stores + eBay, AliExpress, Temu channels end-to-end</li>
+        <li>Full tracking stack: GA4, GTM, Facebook CAPI, Google Merchant Center, Commerce Manager</li>
+      </ul>
+      <div class="chips">
+        <span class="chip">Shopify Liquid</span><span class="chip">AI Chatbot</span><span class="chip">Make.com</span><span class="chip gold">SEO 92</span><span class="chip gold">PageSpeed 96/88</span><span class="chip">CAPI</span>
+      </div>
+    </div>
+
+    <div class="tj">
+      <div class="tj-date">JAN 2020 – SEP 2023</div>
+      <div class="tj-role">International Trade & Digital Marketing Specialist</div>
+      <div class="tj-co">Tourifye<span>·</span>Remote / International</div>
+      <ul class="tj-pts">
+        <li>Achieved USD $1,000,000 in annual revenue across Asia, Europe & the Middle East</li>
+        <li>Boosted campaign ROI +40% via Google Ads & Meta Ads optimization</li>
+        <li>Increased organic traffic +60% and lead conversions +35% via SEO/SEM</li>
+        <li>Managed full export trade cycle: acquisition → proposal → contract → fulfilment → after-sales</li>
+        <li>Implemented GA4, GTM, CAPI and Shopify server-side tracking for precise attribution</li>
+        <li>Built KPI dashboards and delivered actionable insights for marketing spend optimization</li>
+      </ul>
+      <div class="chips">
+        <span class="chip gold">$1M Revenue</span><span class="chip gold">+40% ROI</span><span class="chip">GA4 + GTM</span><span class="chip">Meta Ads</span><span class="chip">Google Ads</span><span class="chip">B2B Sales</span>
+      </div>
+    </div>
+
+    <div class="tj">
+      <div class="tj-date">MAR 2017 – DEC 2019</div>
+      <div class="tj-role">Digital Marketing & IT Administration</div>
+      <div class="tj-co">Temakaw Fashion Ltd.<span>·</span>Mirpur-10, Dhaka, Bangladesh</div>
+      <ul class="tj-pts">
+        <li>Managed digital marketing channels and online brand presence for garments export business</li>
+        <li>Handled IT administration, system maintenance, and internal network operations</li>
+        <li>Coordinated B2B client communications and supported export documentation & order management</li>
+        <li>Developed and maintained company digital presence across social and trade platforms</li>
+      </ul>
+      <div class="chips">
+        <span class="chip">Digital Marketing</span><span class="chip">IT Admin</span><span class="chip">B2B Export</span><span class="chip">Garments Industry</span>
+      </div>
+    </div>
+
+    <div class="tj">
+      <div class="tj-date">MAR 2016 – MAR 2017</div>
+      <div class="tj-role">IT Support Engineer & QA / Test Engineer</div>
+      <div class="tj-co">Systech Digital Limited<span>·</span>Dhaka, Bangladesh</div>
+      <ul class="tj-pts">
+        <li>Created and executed test plans and test cases ensuring software quality across all releases</li>
+        <li>Performed manual and automated test execution, tracking bugs through formal defect management</li>
+        <li>Configured and troubleshot software/hardware systems and maintained test environments</li>
+        <li>Reported test progress, defect metrics, and quality insights to project management</li>
+      </ul>
+      <div class="chips">
+        <span class="chip">QA Testing</span><span class="chip">Test Automation</span><span class="chip">Bug Tracking</span><span class="chip">IT Support</span>
+      </div>
+    </div>
+
+    <div class="tj">
+      <div class="tj-date">NOV 2016 – MAR 2017</div>
+      <div class="tj-role">Support Engineer — NOC (Network Operations Center)</div>
+      <div class="tj-co">Bright Technologies Limited<span>·</span>Dhaka, Bangladesh</div>
+      <ul class="tj-pts">
+        <li>Monitored and maintained network infrastructure — routers, switches, firewalls, load balancers</li>
+        <li>Configured WAN, MAN, Proxy, VPN, FTP, MMTS network devices and systems</li>
+        <li>Monitored DNS, Mail, Proxy via Cacti, Zabbix, and MRTG tools for uptime and performance</li>
+        <li>Provided frontline NOC support: incident detection, escalation, and resolution</li>
+      </ul>
+      <div class="chips">
+        <span class="chip">NOC Operations</span><span class="chip">Network Admin</span><span class="chip">Server Monitoring</span><span class="chip">Routing & Switching</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="sh fu">
+    <div class="stag">Portfolio</div>
+    <h2>Real Projects,<br>Real Results</h2>
+    <p class="ssub">Click any card to view full details and results.</p>
+  </div>
+  <div class="pf-filter fu">
+    <button class="fb on" onclick="pfilter('all',this)">All Work</button>
+    <button class="fb" onclick="pfilter('shopify',this)">Shopify Dev</button>
+    <button class="fb" onclick="pfilter('ads',this)">Ads Results</button>
+    <button class="fb" onclick="pfilter('seo',this)">SEO</button>
+    <button class="fb" onclick="pfilter('analytics',this)">Analytics</button>
+    <button class="fb" onclick="pfilter('automation',this)">AI & Automation</button>
+  </div>
+  <div class="pf-grid fu" id="pfGrid">
+    <div class="pf-card" data-cat="shopify" onclick="openM('m1')">
+      <div class="pf-img"><div class="pf-ph">🛍️<span>Shopify Store Screenshot</span><span style="opacity:.4;font-size:.65rem">Replace: &lt;img src="shopify1.jpg"&gt;</span></div><div class="pf-ov"><span class="pf-ov-txt">VIEW DETAILS →</span></div></div>
+      <div class="pf-info"><div class="pf-cat">SHOPIFY DEVELOPMENT</div><div class="pf-title">Musical Instrument DTC Store</div><div class="pf-desc">Full Shopify build — Liquid dev, custom sections, mobile responsive, CRO optimized</div><div class="pf-badges"><span class="pbadge">SEO 92/100</span><span class="pbadge">PageSpeed 96/88</span></div></div>
+    </div>
+    <div class="pf-card" data-cat="seo" onclick="openM('m2')">
+      <div class="pf-img"><div class="pf-ph">🔍<span>Google Rankings Screenshot</span><span style="opacity:.4;font-size:.65rem">Replace: &lt;img src="seo.jpg"&gt;</span></div><div class="pf-ov"><span class="pf-ov-txt">VIEW DETAILS →</span></div></div>
+      <div class="pf-info"><div class="pf-cat">SEO RESULTS</div><div class="pf-title">9 Keywords — Google Page 1</div><div class="pf-desc">Organic traffic 0 → 200+ daily visitors. Zero paid spend. Full technical + on-page SEO.</div><div class="pf-badges"><span class="pbadge">200+ Daily</span><span class="pbadge">$0 Paid</span></div></div>
+    </div>
+    <div class="pf-card" data-cat="ads" onclick="openM('m3')">
+      <div class="pf-img"><div class="pf-ph">📘<span>Meta Ads Dashboard</span><span style="opacity:.4;font-size:.65rem">Replace: &lt;img src="meta-ads.jpg"&gt;</span></div><div class="pf-ov"><span class="pf-ov-txt">VIEW DETAILS →</span></div></div>
+      <div class="pf-info"><div class="pf-cat">META ADS</div><div class="pf-title">Facebook & Instagram Campaigns</div><div class="pf-desc">Full-funnel Meta Ads with CAPI server-side tracking. +40% ROI improvement.</div><div class="pf-badges"><span class="pbadge">+40% ROI</span><span class="pbadge">CAPI</span></div></div>
+    </div>
+    <div class="pf-card" data-cat="ads" onclick="openM('m4')">
+      <div class="pf-img"><div class="pf-ph">🔍<span>Google Ads Dashboard</span><span style="opacity:.4;font-size:.65rem">Replace: &lt;img src="google-ads.jpg"&gt;</span></div><div class="pf-ov"><span class="pf-ov-txt">VIEW DETAILS →</span></div></div>
+      <div class="pf-info"><div class="pf-cat">GOOGLE ADS</div><div class="pf-title">Search & Shopping Campaigns</div><div class="pf-desc">Google Ads + Merchant Center. +60% traffic, +35% conversions.</div><div class="pf-badges"><span class="pbadge">+60% Traffic</span><span class="pbadge">+35% CVR</span></div></div>
+    </div>
+    <div class="pf-card" data-cat="analytics" onclick="openM('m5')">
+      <div class="pf-img"><div class="pf-ph">📊<span>GA4 Dashboard Screenshot</span><span style="opacity:.4;font-size:.65rem">Replace: &lt;img src="ga4.jpg"&gt;</span></div><div class="pf-ov"><span class="pf-ov-txt">VIEW DETAILS →</span></div></div>
+      <div class="pf-info"><div class="pf-cat">ANALYTICS & TRACKING</div><div class="pf-title">GA4 + GTM + CAPI Full Stack</div><div class="pf-desc">Server-side tracking setup — GA4, GTM, Facebook CAPI, Merchant Center.</div><div class="pf-badges"><span class="pbadge">Server-Side</span><span class="pbadge">100% Accurate</span></div></div>
+    </div>
+    <div class="pf-card" data-cat="automation" onclick="openM('m6')">
+      <div class="pf-img"><div class="pf-ph">🤖<span>AI Chatbot / Automation Demo</span><span style="opacity:.4;font-size:.65rem">Replace: &lt;img src="chatbot.jpg"&gt;</span></div><div class="pf-ov"><span class="pf-ov-txt">VIEW DETAILS →</span></div></div>
+      <div class="pf-info"><div class="pf-cat">AI AUTOMATION</div><div class="pf-title">AI Chatbot & Agent Workflows</div><div class="pf-desc">AI chatbot for 24/7 customer service + Make.com automation for email, social, listings.</div><div class="pf-badges"><span class="pbadge">24/7 Auto</span><span class="pbadge">Make.com</span></div></div>
+    </div>
+    <div class="pf-card" data-cat="shopify" onclick="openM('m7')">
+      <div class="pf-img"><div class="pf-ph">💻<span>More Shopify Work</span><span style="opacity:.4;font-size:.65rem">Replace: &lt;img src="shopify2.jpg"&gt;</span></div><div class="pf-ov"><span class="pf-ov-txt">VIEW DETAILS →</span></div></div>
+      <div class="pf-info"><div class="pf-cat">SHOPIFY DEVELOPMENT</div><div class="pf-title">150+ Stores Built</div><div class="pf-desc">Shopify & WordPress store builds, theme customization, Liquid development, CRO.</div><div class="pf-badges"><span class="pbadge">150+ Stores</span><span class="pbadge">CRO</span></div></div>
+    </div>
+    <div class="pf-card" data-cat="seo" onclick="openM('m8')">
+      <div class="pf-img"><div class="pf-ph">📱<span>Facebook Growth Screenshot</span><span style="opacity:.4;font-size:.65rem">Replace: &lt;img src="fb-growth.jpg"&gt;</span></div><div class="pf-ov"><span class="pf-ov-txt">VIEW DETAILS →</span></div></div>
+      <div class="pf-info"><div class="pf-cat">SOCIAL MEDIA GROWTH</div><div class="pf-title">0 → 5,000 Facebook Followers</div><div class="pf-desc">100% organic Facebook growth strategy. Zero paid promotion.</div><div class="pf-badges"><span class="pbadge">5K Followers</span><span class="pbadge">100% Organic</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos">
+  <div class="sh fu">
+    <div class="stag">Video Showcase</div>
+    <h2>See the Work<br>In Action</h2>
+    <p class="ssub">Walkthroughs, demos, and result screen recordings.</p>
+  </div>
+  <div class="vg fu">
+    <div class="vc">
+      <div class="vthumb">
+        <!-- YouTube embed: replace div below with <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe> -->
+        <div class="vph" onclick="alert('Add your YouTube embed here')"><div class="play"><div class="play-tri"></div></div><span class="vlbl">SHOPIFY STORE DEMO</span></div>
+      </div>
+      <div class="vinfo"><div class="vcat">SHOPIFY DEVELOPMENT</div><div class="vtitle">Full Store Walkthrough</div><div class="vdesc">Complete Shopify store demo — custom sections, mobile view, PageSpeed test results</div><div class="vhint">Add: &lt;iframe src="youtube.com/embed/VIDEO_ID" allowfullscreen&gt;&lt;/iframe&gt;</div></div>
+    </div>
+    <div class="vc">
+      <div class="vthumb">
+        <div class="vph" onclick="alert('Add your YouTube embed here')"><div class="play"><div class="play-tri"></div></div><span class="vlbl">AI AUTOMATION DEMO</span></div>
+      </div>
+      <div class="vinfo"><div class="vcat">AI & AUTOMATION</div><div class="vtitle">Chatbot & Make.com Workflow</div><div class="vdesc">Live demo of AI customer service chatbot and Make.com automation pipeline in action</div><div class="vhint">Add: &lt;iframe src="youtube.com/embed/VIDEO_ID" allowfullscreen&gt;&lt;/iframe&gt;</div></div>
+    </div>
+    <div class="vc">
+      <div class="vthumb">
+        <div class="vph" onclick="alert('Add your YouTube embed here')"><div class="play"><div class="play-tri"></div></div><span class="vlbl">RESULTS WALKTHROUGH</span></div>
+      </div>
+      <div class="vinfo"><div class="vcat">ADS & SEO RESULTS</div><div class="vtitle">GA4, Rankings & Ads Performance</div><div class="vdesc">Screen recording: GA4 dashboard, Google Page 1 rankings, Meta Ads campaign results</div><div class="vhint">Add: &lt;iframe src="youtube.com/embed/VIDEO_ID" allowfullscreen&gt;&lt;/iframe&gt;</div></div>
+    </div>
+    <div class="vc">
+      <div class="vthumb">
+        <div class="vph" onclick="alert('Add your YouTube embed here')"><div class="play"><div class="play-tri"></div></div><span class="vlbl">SEO AUDIT DEMO</span></div>
+      </div>
+      <div class="vinfo"><div class="vcat">SEO</div><div class="vtitle">Semrush Audit — Score 92</div><div class="vdesc">Full SEO audit walkthrough showing technical SEO score, keyword rankings, and fixes applied</div><div class="vhint">Add: &lt;iframe src="youtube.com/embed/VIDEO_ID" allowfullscreen&gt;&lt;/iframe&gt;</div></div>
+    </div>
+  </div>
+  <p style="text-align:center;color:rgba(122,143,168,.4);font-size:.75rem;margin-top:28px;">💡 Upload to YouTube → copy video ID → paste in iframe src</p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="sh fu">
+    <div class="stag">Services</div>
+    <h2>What I Can<br>Do For You</h2>
+    <p class="ssub">Available for full-time, freelance, and part-time remote engagements globally.</p>
+  </div>
+  <div class="sv-grid fu">
+    <div class="sv"><div class="sv-icon">🛍️</div><div class="sv-title">Shopify Development</div><div class="sv-desc">Custom Liquid theme dev, Figma-to-Shopify, responsive design, custom sections, speed optimization, store from scratch</div><div class="sv-price">From $300 / project</div></div>
+    <div class="sv"><div class="sv-icon">📊</div><div class="sv-title">Performance Marketing</div><div class="sv-desc">Google Ads, Meta Ads, TikTok Ads, Amazon PPC — full setup, campaign management, optimization & monthly reporting</div><div class="sv-price">From $500 / month</div></div>
+    <div class="sv"><div class="sv-icon">🌐</div><div class="sv-title">SEO & Technical Audit</div><div class="sv-desc">Technical SEO, on-page optimization, keyword strategy, schema markup, Semrush audit, competitor analysis</div><div class="sv-price">From $400 / month</div></div>
+    <div class="sv"><div class="sv-icon">🤖</div><div class="sv-title">AI Chatbot & Automation</div><div class="sv-desc">AI customer service chatbot development, Make.com & Zapier workflows, business process automation</div><div class="sv-price">From $500 / project</div></div>
+    <div class="sv"><div class="sv-icon">🔗</div><div class="sv-title">Tracking & Analytics</div><div class="sv-desc">GA4 setup, GTM configuration, server-side tracking (CAPI), Merchant Center, conversion attribution</div><div class="sv-price">From $300 / setup</div></div>
+    <div class="sv"><div class="sv-icon">💻</div><div class="sv-title">HTML / CSS / JS Dev</div><div class="sv-desc">Custom frontend components, landing pages, Figma to code, interactive UI, performance optimization</div><div class="sv-price">From $200 / project</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sh fu">
+    <div class="stag">Contact</div>
+    <h2>Let's Work Together</h2>
+    <p class="ssub">Open for full-time roles in Dubai/UAE and freelance projects globally. Fast response guaranteed.</p>
+  </div>
+  <div class="contact-wrap fu">
+    <div>
+      <div class="av-badge"><span class="avail-dot"></span> Available for new opportunities — responds within 24hrs</div>
+      <div class="ci-list">
+        <div class="ci"><div class="ci-icon">✉️</div><div><div class="ci-lbl">EMAIL</div><div class="ci-val"><a href="mailto:tadabburislam@gmail.com">tadabburislam@gmail.com</a></div></div></div>
+        <div class="ci"><div class="ci-icon">💬</div><div><div class="ci-lbl">WHATSAPP / PHONE</div><div class="ci-val"><a href="https://wa.me/8615528502117" target="_blank">+86 155 2850 2117</a></div></div></div>
+        <div class="ci"><div class="ci-icon">💼</div><div><div class="ci-lbl">LINKEDIN</div><div class="ci-val"><a href="https://linkedin.com/in/tadabburislam" target="_blank">linkedin.com/in/tadabburislam</a></div></div></div>
+        <div class="ci"><div class="ci-icon">📍</div><div><div class="ci-lbl">LOCATION</div><div class="ci-val">Guangzhou, China · Open to Dubai & Remote</div></div></div>
+        <div class="ci"><div class="ci-icon">🕐</div><div><div class="ci-lbl">AVAILABILITY</div><div class="ci-val">Full-time · Part-time · Freelance · Remote</div></div></div>
+      </div>
+    </div>
+    <form class="cf" onsubmit="sendForm(event)">
+      <div class="fg"><label class="flbl">YOUR NAME</label><input class="fi" type="text" placeholder="John Smith" required></div>
+      <div class="fg"><label class="flbl">EMAIL ADDRESS</label><input class="fi" type="email" placeholder="john@company.com" required></div>
+      <div class="fg"><label class="flbl">SUBJECT</label><input class="fi" type="text" placeholder="Job opportunity / Project inquiry / Freelance work"></div>
+      <div class="fg"><label class="flbl">MESSAGE</label><textarea class="fta" placeholder="Tell me about the opportunity or project..."></textarea></div>
+      <button type="submit" class="fsub">SEND MESSAGE →</button>
+      <p style="font-size:.7rem;color:var(--gray);text-align:center;">Or reach out directly on <a href="https://wa.me/8615528502117" style="color:var(--teal)" target="_blank">WhatsApp</a> for faster response</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl">S M TADABBUR ISLAM</div>
+  <div class="ft">© 2026 · Built with HTML/CSS/JS · Hosted on GitHub Pages</div>
+  <div class="socials">
+    <a href="https://linkedin.com/in/tadabburislam" class="sl" target="_blank" title="LinkedIn">in</a>
+    <a href="mailto:tadabburislam@gmail.com" class="sl" title="Email">@</a>
+    <a href="https://wa.me/8615528502117" class="sl" target="_blank" title="WhatsApp">💬</a>
+  </div>
+</footer>
+
+<!-- MODALS -->
+<div class="modal" id="m1"><div class="mc"><div class="mh"><div class="mt">Musical Instrument DTC Store</div><button class="mx" onclick="closeM('m1')">✕</button></div><div class="mb"><div style="background:var(--navy2);height:260px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:.8rem;margin-bottom:14px;">Replace with: &lt;img src="shopify-full.jpg" class="mi"&gt;</div><p class="md">Full Shopify store built from scratch for Jiangsu Xinghai Musical Instruments. Custom Liquid theme, Section/Block development, Figma-to-code pixel-perfect pages, PageSpeed Desktop 96 / Mobile 88, SEO score 92/100, 9 keywords on Google Page 1.</p><div class="chips" style="margin-top:14px;"><span class="chip">Shopify Liquid</span><span class="chip">Custom Sections</span><span class="chip gold">SEO 92</span><span class="chip gold">PageSpeed 96/88</span><span class="chip">CRO</span></div></div></div></div>
+<div class="modal" id="m2"><div class="mc"><div class="mh"><div class="mt">9 Keywords on Google Page 1</div><button class="mx" onclick="closeM('m2')">✕</button></div><div class="mb"><div style="background:var(--navy2);height:260px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:.8rem;margin-bottom:14px;">Replace with: &lt;img src="seo-rankings.jpg" class="mi"&gt;</div><p class="md">Technical SEO, on-page optimization, schema markup, and content strategy drove 9 keywords to Google Page 1 — generating 200+ daily organic visitors with zero paid advertising spend.</p><div class="chips" style="margin-top:14px;"><span class="chip gold">9 Page-1 Keywords</span><span class="chip gold">200+ Daily Visitors</span><span class="chip">Zero Paid</span><span class="chip">Schema Markup</span></div></div></div></div>
+<div class="modal" id="m3"><div class="mc"><div class="mh"><div class="mt">Meta Ads Results</div><button class="mx" onclick="closeM('m3')">✕</button></div><div class="mb"><div style="background:var(--navy2);height:260px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:.8rem;margin-bottom:14px;">Replace with: &lt;img src="meta-ads-results.jpg" class="mi"&gt;</div><p class="md">Full-funnel Meta Ads campaigns with Facebook CAPI server-side tracking. Audience building, creative testing, retargeting, and funnel optimization drove +40% ROI improvement.</p><div class="chips" style="margin-top:14px;"><span class="chip gold">+40% ROI</span><span class="chip">CAPI</span><span class="chip">Full Funnel</span><span class="chip">Retargeting</span></div></div></div></div>
+<div class="modal" id="m4"><div class="mc"><div class="mh"><div class="mt">Google Ads Campaigns</div><button class="mx" onclick="closeM('m4')">✕</button></div><div class="mb"><div style="background:var(--navy2);height:260px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:.8rem;margin-bottom:14px;">Replace with: &lt;img src="google-ads-results.jpg" class="mi"&gt;</div><p class="md">Google Search and Shopping campaigns with conversion tracking via GTM and Google Merchant Center. Increased traffic by +60% and lead conversion rate by +35%.</p><div class="chips" style="margin-top:14px;"><span class="chip gold">+60% Traffic</span><span class="chip gold">+35% CVR</span><span class="chip">Shopping Ads</span><span class="chip">GTM</span></div></div></div></div>
+<div class="modal" id="m5"><div class="mc"><div class="mh"><div class="mt">GA4 + GTM + CAPI Tracking Stack</div><button class="mx" onclick="closeM('m5')">✕</button></div><div class="mb"><div style="background:var(--navy2);height:260px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:.8rem;margin-bottom:14px;">Replace with: &lt;img src="ga4-dashboard.jpg" class="mi"&gt;</div><p class="md">Complete server-side tracking infrastructure — GA4 event tracking, GTM triggers/variables, Facebook CAPI for accurate purchase attribution, and Google Merchant Center product feed.</p><div class="chips" style="margin-top:14px;"><span class="chip">GA4</span><span class="chip">GTM</span><span class="chip gold">Server-Side CAPI</span><span class="chip">Merchant Center</span></div></div></div></div>
+<div class="modal" id="m6"><div class="mc"><div class="mh"><div class="mt">AI Chatbot & Automation Workflows</div><button class="mx" onclick="closeM('m6')">✕</button></div><div class="mb"><div style="background:var(--navy2);height:260px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:.8rem;margin-bottom:14px;">Replace with: &lt;img src="chatbot-demo.jpg" class="mi"&gt;</div><p class="md">AI-powered customer service chatbot handling 24/7 inquiries, order tracking, and after-sales support — plus Make.com and Zapier workflows automating email, social, product listings, and follow-ups.</p><div class="chips" style="margin-top:14px;"><span class="chip gold">AI Chatbot</span><span class="chip gold">Make.com</span><span class="chip">Zapier</span><span class="chip">24/7 Auto</span></div></div></div></div>
+<div class="modal" id="m7"><div class="mc"><div class="mh"><div class="mt">150+ Shopify Stores</div><button class="mx" onclick="closeM('m7')">✕</button></div><div class="mb"><div style="background:var(--navy2);height:260px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:.8rem;margin-bottom:14px;">Replace with: &lt;img src="portfolio-stores.jpg" class="mi"&gt;</div><p class="md">4+ years building and optimizing 150+ Shopify and WordPress stores — Liquid theme development, custom modules, responsive design, CRO, and PageSpeed optimization across diverse industries.</p><div class="chips" style="margin-top:14px;"><span class="chip gold">150+ Stores</span><span class="chip">Shopify Liquid</span><span class="chip">WordPress</span><span class="chip">CRO</span></div></div></div></div>
+<div class="modal" id="m8"><div class="mc"><div class="mh"><div class="mt">0 → 5,000 Facebook Followers</div><button class="mx" onclick="closeM('m8')">✕</button></div><div class="mb"><div style="background:var(--navy2);height:260px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:.8rem;margin-bottom:14px;">Replace with: &lt;img src="fb-growth.jpg" class="mi"&gt;</div><p class="md">Built Facebook page from 0 to 5,000+ followers through 100% organic content strategy — consistent posting, community engagement, and brand building with zero paid promotion budget.</p><div class="chips" style="margin-top:14px;"><span class="chip gold">5K Followers</span><span class="chip">100% Organic</span><span class="chip">Zero Budget</span><span class="chip">Community Growth</span></div></div></div></div>
+
+<script>
+// Mobile nav
+function toggleMob(){document.getElementById('mobNav').classList.toggle('on');}
+
+// Scroll reveal
+const obs = new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');}});},{threshold:.08});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+
+// Progress bars
+const pbObs = new IntersectionObserver(e=>{
+  e.forEach(x=>{
+    if(x.isIntersecting){
+      x.target.querySelectorAll('.pb-fill').forEach(b=>{b.style.width=b.dataset.w+'%';});
+    }
+  });
+},{threshold:.3});
+document.querySelectorAll('.about-grid').forEach(el=>pbObs.observe(el));
+
+// Counter animation
+function animateCount(el){
+  const target=+el.dataset.target;
+  let cur=0;
+  const step=target/60;
+  const t=setInterval(()=>{
+    cur=Math.min(cur+step,target);
+    el.textContent=Math.floor(cur);
+    if(cur>=target)clearInterval(t);
+  },20);
+}
+const cObs=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting){document.querySelectorAll('.count').forEach(animateCount);cObs.disconnect();}});
+},{threshold:.5});
+const heroSection=document.querySelector('#hero');
+if(heroSection)cObs.observe(heroSection);
+
+// Portfolio filter
+function pfilter(cat,btn){
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.pf-card').forEach(c=>{
+    c.style.display=(cat==='all'||c.dataset.cat===cat)?'block':'none';
+  });
+}
+
+// Modals
+function openM(id){document.getElementById(id).classList.add('on');document.body.style.overflow='hidden';}
+function closeM(id){document.getElementById(id).classList.remove('on');document.body.style.overflow='';}
+document.querySelectorAll('.modal').forEach(m=>{m.addEventListener('click',function(e){if(e.target===this)closeM(this.id);});});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal.on').forEach(m=>closeM(m.id));});
+
+// Active nav on scroll
+window.addEventListener('scroll',()=>{
+  const secs=document.querySelectorAll('section[id]');
+  const links=document.querySelectorAll('.nav-links a');
+  let cur='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id;});
+  links.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+cur);});
+});
+
+// Contact form
+function sendForm(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('.fsub');
+  btn.textContent='✓ MESSAGE SENT!';
+  btn.style.background='#22ee88';
+  setTimeout(()=>{btn.textContent='SEND MESSAGE →';btn.style.background='';e.target.reset();},3000);
+  // To make form actually send emails:
+  // 1. Go to formspree.io → create free account → get form ID
+  // 2. Change form tag to: <form action="https://formspree.io/f/YOUR_ID" method="POST">
+  // 3. Remove onsubmit="sendForm(event)"
+}
+</script>
+</body>
+</html>
